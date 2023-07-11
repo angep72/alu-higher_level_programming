@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 10-add.py
+# 10-add.pyth
 
 
 def add(a, b):
