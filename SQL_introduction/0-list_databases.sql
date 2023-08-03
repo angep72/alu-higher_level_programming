@@ -1,2 +1,3 @@
-#wherw are asked to list servers
-show databases;
+# we are going to list all databased
+----list database---
+SHOW DATABASES;
