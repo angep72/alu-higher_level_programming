@@ -1,3 +1,3 @@
-# we are going to list all databased
---list database
+# Listing all databases in my MySQL server
+-- Listing all databases in my MySQL server
 SHOW DATABASES;
