@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 # A script that lists all 'states' with a name starting with 'N'
-"""import 'sys' & 'MySQLdb'."""
-import sys
-import MySQLdb
-
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    b = db.cursor()
-    b.execute("SELECT * FROM `states` ORDER BY `id`")
-    [print(state) for state in b.fetchall() if state[1][0] == "N"]
+    import MySQLdb
+    import sys
+    database = MySQLdb.connect(host="localhost", port=3306,
+                               user=sys.argv[1], password=sys.argv[2],
+                               database=sys.argv[3], use_unicode=True)
+    c = database.cursor()
+    c.execute("""SELECT * FROM states WHERE name LIKE BINARY "N%"
+               AND name NOT LIKE BINARY "n%"
+               ORDER BY states.id ASC;""")
+    rows = c.fetchall()
+    for row in rows:
+        print(row)
+    c.close()
