@@ -1,1 +1,0 @@
-tructured querly languanges 
