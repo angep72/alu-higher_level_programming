@@ -1,0 +1,1 @@
+This file gives out basic understanding about javascript
